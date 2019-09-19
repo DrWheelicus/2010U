@@ -1,21 +1,18 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
             "name": "CodeLens (Launch) - Week02b",
             "request": "launch",
             "mainClass": "Week02b",
-            "projectName": "2010U_625c2b9b"
+            "projectName": "2010U_1b3987df"
         },
         {
             "type": "java",
-            "name": "Debug (Launch) - Current File",
+            "name": "CodeLens (Launch) - Song",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "Song",
+            "projectName": "2010U_1b3987df"
         }
     ]
 }
