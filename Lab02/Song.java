@@ -11,7 +11,7 @@ public class Song {
     private String artist;
     private String title;
     private int duration;
-    public String collectionName;
+    public static String collectionName;
 
     // Constructor that saves the song's information to the object (artist's name, song title and duration)
     public Song(String artist, String title, int duration) {
