@@ -2,17 +2,15 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Week02b",
+            "name": "CodeLens (Launch) - Run",
             "request": "launch",
             "mainClass": "Week02b",
-            "projectName": "2010U_1b3987df"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Song",
+            "name": "CodeLens (Launch) - Run",
             "request": "launch",
             "mainClass": "Song",
-            "projectName": "2010U_1b3987df"
         }
     ]
 }
