@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LinkedListDriver",
+            "request": "launch",
+            "mainClass": "LinkedListDriver",
+            "projectName": "2010U_1b3987df"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedList",
+            "request": "launch",
+            "mainClass": "LinkedList",
+            "projectName": "2010U_1b3987df"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Shape",
             "request": "launch",
             "mainClass": "Shape",
