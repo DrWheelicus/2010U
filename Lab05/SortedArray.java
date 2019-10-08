@@ -1,46 +1,46 @@
 public class SortedArray { 
     int assignmentCount = 0;
     
-    int warriorSpeed[] = new int[100];
+    int warriorArray[] = new int[100];
     
     public int getAssignmentCount(){
         return assignmentCount;
     }
     
     public void insert(Warrior warrior) {    
-        if (warriorSpeed[0] == 0){
-            warriorSpeed[0] = warrior.getSpeed();
+        if (warriorArray[0] == 0){
+            warriorArray[0] = warrior.getSpeed();
             assignmentCount += 1;
         } else {
-            int i = warriorSpeed.length - 1;
+            int i = warriorArray.length - 1;
             assignmentCount += 1;
 
-            while (warrior.getSpeed() > warriorSpeed[i] && i >= 0){
+            while (warrior.getSpeed() > warriorArray[i] && i >= 0){
                 if(i == 0){
-                    int bugFix = warriorSpeed[i];
+                    int bugFix = warriorArray[i];
                     assignmentCount += 1;
                     int j = 1;
                     assignmentCount += 1;
 
-                    while(warriorSpeed[j]>bugFix){
-                        warriorSpeed[j] = warriorSpeed[j-1];
+                    while(warriorArray[j]>bugFix){
+                        warriorArray[j] = warriorArray[j-1];
                       assignmentCount += 1;
                         j++;
                     }
 
-                    warriorSpeed[i] = warrior.getSpeed();
+                    warriorArray[i] = warrior.getSpeed();
                     assignmentCount += 1;
                 } else {
-                    warriorSpeed[i] = warriorSpeed[i-1];
+                    warriorArray[i] = warriorArray[i-1];
                     assignmentCount += 1;
 
                     if(i>1){
-                        if (warrior.getSpeed() < warriorSpeed[i-1]){
-                            warriorSpeed[i] = warrior.getSpeed();
+                        if (warrior.getSpeed() < warriorArray[i-1]){
+                            warriorArray[i] = warrior.getSpeed();
                             assignmentCount += 1;
                         } 
                     } else {
-                        warriorSpeed[i] = warrior.getSpeed();
+                        warriorArray[i] = warrior.getSpeed();
                         assignmentCount += 1;
                     }
 
@@ -54,9 +54,9 @@ public class SortedArray {
     
     public String toString(){
         String temp = "[ ";
-        
-        for (int i = 0; i < warriorSpeed.length; i ++){
-            temp += "(" + warriorSpeed[i] + ")";
+
+        for (int i = 0; i < warriorArray.length; i ++){
+            temp += "(" + warriorArray[i] + ")";
         }
 
         temp += ']';
