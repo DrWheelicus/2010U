@@ -24,7 +24,7 @@ public abstract class Player {
     /**
      * Determines the HP value of the monster associated with the player.
      * If the monster has no HP or negative HP then
-     * the method will return true meaning they are dead.
+     * the method will return true, meaning they are dead.
      *
      * @return          <code>true</code> if the HP value is zero or negative;
      *                  <code>false</code> otherwise.

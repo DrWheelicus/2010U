@@ -1,12 +1,13 @@
+import java.lang.Math;
+
 /**
- * Main class that runs a Pokémon-based JRPG.
- * Here, the programmer can specify various Pokémon
+ * Main class that runs a Pok&eacute;mon-based JRPG.
+ * Here, the programmer can specify various Pok&eacute;mon
  * along with their attributes and assign them to a player.
  *
  * @author Hayden MacIntyre
  * @author Aaron Woodhouse
  */
-import java.lang.Math;
 public class GameDriver {
     public static void main(String[] args) {
         Move move1 = new Move("Vine Whip", "Grass", 45, 1.0f);
