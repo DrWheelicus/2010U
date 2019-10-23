@@ -26,8 +26,16 @@ public class HumanPlayer extends Player {
     public int chooseMove() {
         // Prompt the user for a choice 
         Scanner move = new Scanner(System.in);
-        System.out.println("Choose what move you would like to use (1-4):");
 
+        // Display menu
+        System.out.println("\nChoose one of the following moves:\n");
+        System.out.printf("          Name        Type   Power    Accuracy");
+        System.out.println("\nOption 1: " + this.getMonster().getMove1().toString());
+        System.out.println("Option 2: " + this.getMonster().getMove2().toString());
+        System.out.println("Option 3: " + this.getMonster().getMove3().toString());
+        System.out.println("Option 4: " + this.getMonster().getMove4().toString() + "\n");
+
+        System.out.printf("Option #(1-4): ");
         int selection;
 
         // Check if the input is an integer (i.e. not "one")
