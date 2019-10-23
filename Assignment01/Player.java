@@ -72,7 +72,7 @@ public abstract class Player {
 
         // If target is missed than no damage is done;
         if(randFloat.compareTo(this.getMonster().getMove(moveChoice).getAccuracy()) == 1){
-            System.out.printf("%s attack missed the target!",this.getMonster().getName());
+            System.out.printf("%s's attack missed the target!",this.getMonster().getName());
             return;
         };
 
