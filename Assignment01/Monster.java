@@ -145,4 +145,21 @@ public class Monster {
 
         return moveNum;
     }
+
+    public Move getMove1() {
+        return this.move1;
+    }
+
+    public Move getMove2() {
+        return this.move2;
+    }
+
+    public Move getMove3() {
+        return this.move3;
+    }
+
+    public Move getMove4() {
+        return this.move4;
+    }
+
 }

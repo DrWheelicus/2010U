@@ -52,4 +52,10 @@ public class Move {
     public float getAccuracy() {
         return this.accuracy;
     }
+
+    @Override
+    public String toString() {
+        return this.name + "   " + this.type + "\t" + this.power + "\t" + this.accuracy;
+    }
+
 }
