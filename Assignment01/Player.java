@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Player is an abstract class that represents a single player of the JRPG.
  * Contains methods to check whether or not 
@@ -65,6 +67,15 @@ public abstract class Player {
      */
     public void attack(Player target, int moveChoice) {
         // Calculate the damage to be dealt
+        Random rand = new Random();
+        Float randFloat = rand.nextFloat();
+
+        // If target is missed than no damage is done;
+        if(randFloat.compareTo(this.getMonster().getMove(moveChoice).getAccuracy()) == 1){
+            System.out.printf("%s attack missed the target!",this.getMonster().getName());
+            return;
+        };
+
         int damage = (this.getMonster().getAttack() + this.getMonster().getMove(moveChoice).getPower())
                 - target.getMonster().getDefense();
 
