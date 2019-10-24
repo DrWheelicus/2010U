@@ -38,7 +38,7 @@ public class FibonacciDriver {
 
     public static void main(String[] args) {
         System.out.println("Fibonacci:");
-        int n = 40;
+        int n = 15;
 
         resetCallCount();
         int recursiveResult = fibonacciRec(n);
