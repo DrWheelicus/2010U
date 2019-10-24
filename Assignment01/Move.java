@@ -36,6 +36,15 @@ public class Move {
     }
 
     /**
+     * Gets the type associated with the Move.
+     *
+     * @return          the moves type.
+     */
+    public String getType() {
+        return this.type;
+    }
+
+    /**
      * Gets the power associated with the Move.
      *
      * @return          the moves power.

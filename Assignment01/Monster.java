@@ -17,6 +17,7 @@ public class Monster {
     private Move move2;
     private Move move3;
     private Move move4;
+    private String[][] effect;
 
     /**
      * Class constructor
@@ -31,8 +32,9 @@ public class Monster {
      * @param move2 second attack of the monster
      * @param move3 third attack of the monster
      * @param move4 fourth attack of the monster
+     * @param effect the effect of the monster
      */
-    public Monster(String name, String type, int hp, int speed, int attack, int defense, Move move1, Move move2, Move move3, Move move4) {
+    public Monster(String name, String type, int hp, int speed, int attack, int defense, Move move1, Move move2, Move move3, Move move4, String[][] effect) {
         this.name = name;
         this.type = type;
         this.maxhp = hp;
@@ -44,6 +46,7 @@ public class Monster {
         this.move2 = move2;
         this.move3 = move3;
         this.move4 = move4;
+        this.effect = effect;
     }
 
     /**
@@ -116,6 +119,15 @@ public class Monster {
      */
     public int getDefense() {
         return this.defense;
+    }
+
+    /**
+     * Gets the effects associated with the Monster.
+     *
+     * @return          the effects
+     */
+    public String[][] getEffect() {
+        return this.effect;
     }
 
     /**

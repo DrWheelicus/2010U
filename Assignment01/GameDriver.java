@@ -14,15 +14,16 @@ public class GameDriver {
         Move move2 = new Move("Tackle", "Normal", 50, 1.0f);
         Move move3 = new Move("Take Down", "Normal", 90, 0.85f);
         Move move4 = new Move("Razor Leaf", "Grass", 55, 0.95f);
-        Monster monster = new Monster("Bulbasaur", "Grass", 240, 45, 49, 49, move1, move2, move3, move4);
+        String[][] effects = {{"Flying","Fire"}, {"Grass"}};
+        Monster monster = new Monster("Bulbasaur", "Grass", 240, 45, 49, 49, move1, move2, move3, move4, effects);
         Player player = new HumanPlayer(monster);
 
         move1 = new Move("Scratch", "Normal", 40, 1.0f);
         move2 = new Move("Ember", "Fire", 40, 1.0f);
         move3 = new Move("Peck", "Flying", 35, 1.0f);
         move4 = new Move("Fire Spin", "Fire", 35, 0.85f);
-        monster = new Monster("Torchic", "Fire", 240, 45, 60, 40, move1, move2, move3, move4);
-
+        effects = new String[][] {{"Water"}, {"Grass"}};
+        monster = new Monster("Torchic", "Fire", 240, 45, 60, 40, move1, move2, move3, move4, effects);
         Player enemy = new CPUPlayer(monster);
         while ((!player.hasLost()) && (!enemy.hasLost())) {
 
@@ -58,28 +59,26 @@ public class GameDriver {
             } while(playerMove == 0);
             int enemyMove = enemy.chooseMove();
 
+            int multiplier;
+
             // execute the next move
             if (player.isFasterThan(enemy)) {
                 System.out.printf("%s used %s (%s damage)\n", player.getMonster().getName(),
                         player.getMonster().getMove(playerMove).getName(),
-                        (player.getMonster().getAttack() + player.getMonster().getMove(playerMove).getPower()) - enemy.getMonster().getDefense());
-                player.attack(enemy, playerMove);
+                        player.attack(enemy, playerMove));
                 if (!enemy.hasLost()) {
                     System.out.printf("%s used %s (%s damage)\n", enemy.getMonster().getName(),
                             enemy.getMonster().getMove(enemyMove).getName(),
-                            (enemy.getMonster().getAttack() + enemy.getMonster().getMove(enemyMove).getPower()) - player.getMonster().getDefense());
-                    enemy.attack(player, enemyMove);
+                            enemy.attack(player, enemyMove));
                 }
             } else {
                 System.out.printf("%s used %s (%s damage)\n", enemy.getMonster().getName(),
                         enemy.getMonster().getMove(enemyMove).getName(),
-                        (enemy.getMonster().getAttack() + enemy.getMonster().getMove(enemyMove).getPower()) - player.getMonster().getDefense());
-                enemy.attack(player, enemyMove);
+                        enemy.attack(player, enemyMove));
                 if (!player.hasLost()) {
                     System.out.printf("%s used %s (%s damage)\n", player.getMonster().getName(),
                             player.getMonster().getMove(playerMove).getName(),
-                            (player.getMonster().getAttack() + player.getMonster().getMove(playerMove).getPower()) - enemy.getMonster().getDefense());
-                    player.attack(enemy, playerMove);
+                            player.attack(enemy, playerMove));
                 }
             }
         }

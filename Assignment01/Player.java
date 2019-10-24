@@ -2,7 +2,7 @@ import java.util.Random;
 
 /**
  * Player is an abstract class that represents a single player of the JRPG.
- * Contains methods to check whether or not 
+ * Contains methods to check whether or not
  * the player is alive and the speed of the player.
  *
  * @author Hayden MacIntyre
@@ -64,24 +64,45 @@ public abstract class Player {
      * @see             Monster#getDefense()
      * @see             Monster#getHP()
      * @see             Monster#setHP(int)
+     * @see             Monster#getEffect()
      */
-    public void attack(Player target, int moveChoice) {
+    public int attack(Player target, int moveChoice) {
         // Calculate the damage to be dealt
         Random rand = new Random();
         Float randFloat = rand.nextFloat();
+        float multiplier = 1;
 
-        // If target is missed than no damage is done;
+        // Get multiplier
+        for (int i = 0; i < target.getMonster().getEffect()[0].length; i++) {
+          if (this.getMonster().getMove(moveChoice).getType() == target.getMonster().getEffect()[0][i]) {
+            multiplier = 2;
+            System.out.printf("It's super effective!\n");
+          }
+        }
+
+        for (int i = 0; i < this.getMonster().getEffect()[1].length; i++) {
+          if (this.getMonster().getMove(moveChoice).getType() == target.getMonster().getEffect()[1][i]) {
+            multiplier = 0.5f;
+            System.out.printf("It's not very effective...\n");
+          }
+        }
+
+        // If target is missed than no damage is done
         if(randFloat.compareTo(this.getMonster().getMove(moveChoice).getAccuracy()) == 1){
             System.out.printf("%s's attack missed the target!",this.getMonster().getName());
-            return;
+            return 0;
         };
 
-        int damage = (this.getMonster().getAttack() + this.getMonster().getMove(moveChoice).getPower())
-                - target.getMonster().getDefense();
+        float damage = ((this.getMonster().getAttack() + this.getMonster().getMove(moveChoice).getPower())
+                - target.getMonster().getDefense()) * multiplier;
 
-        int hpLeft = target.getMonster().getHP() - damage;
+        int damage2 = (int)(damage);
+
+        int hpLeft = target.getMonster().getHP() - damage2;
 
         // Sets new HP
         target.getMonster().setHP(hpLeft);
+
+        return damage2;
     }
 }
