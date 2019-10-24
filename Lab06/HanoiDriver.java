@@ -12,6 +12,6 @@ public class HanoiDriver {
 
     public static void main(String[] args) {
         System.out.println("Towers of Hanoi:");
-        solveHanoi(1, 3, 2, 4);
+        solveHanoi(4, 1, 3, 2);
     }
 }
