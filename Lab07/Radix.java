@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Radix {
     public static void radixSort(int[] input) {
-        final int RADIX = 10;
+        final int RADIX = 2;
 
         // declare and initialize bucket[]
         List<Integer>[] bucket = new ArrayList[RADIX];
@@ -45,7 +45,7 @@ public class Radix {
     }
 
     public static void main(String[] args) {
-        int[] origNumbers = {0011, 1001, 1000, 0111, 0101};
+        int[] origNumbers = {0b0011, 0b1001, 0b1000, 0b0111, 0b0101};
 
         radixSort(origNumbers);
     }
