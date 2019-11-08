@@ -40,9 +40,10 @@ public class TicTacToeTreeNode {
 	
 	public static void printTree(TicTacToeTreeNode root){
 		System.out.println(root.board);
-		System.out.print("	");
+		//System.out.print("\t");
 		for (int i = 0; i < root.children.size(); i ++){
 			if(root.children.get(i).board != " "){
+				System.out.print("\t");
 				printTree(root.children.get(i));
 			}
 		}
@@ -61,8 +62,6 @@ public class TicTacToeTreeNode {
 					} else {
 						newNode = createNode(makeMove(playerboard, i, "o"),"x",newNode.children); 
 					}
-				
-				System.out.println(newNode.children.size());
 			}
 		}
 		newNode.board = playerboard;
@@ -76,7 +75,7 @@ public class TicTacToeTreeNode {
 				TicTacToeTreeNode temp = new TicTacToeTreeNode(makeMove(playerboard, i, player));
 				
 				newNode.children.add(temp);
-				System.out.println(newNode.children.size());
+				
 				
 					if (player == "x" ){
 						newNode = createNode(makeMove(playerboard, i, "x"),"o",newNode.children); 
